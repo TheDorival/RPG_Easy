@@ -1,4 +1,4 @@
-# Sistema de Gerenciamento de RPG de Mesa (D&D/Pathfinder)
+# Sistema de Gerenciamento de RPG de Mesa (Tormenta 20)
 
 Plataforma para mestres gerenciarem campanhas, personagens, combates e inventários.
 Por que é único: Cálculo automático de dados e modificadores, sistema de turnos em combate, progressão de personagens com níveis/experiência, geração procedural de encontros, gestão de múltiplas campanhas simultâneas.
