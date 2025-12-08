@@ -1,11 +1,12 @@
 package main.br.com.tormenta20.model;
+
 import main.br.com.tormenta20.interfaces.IDescritivel;
 
-public abstract class ElementoFicha implements IDescritivel {
+public abstract class Habilidade implements IDescritivel {
     protected String nome;
     protected String descricao;
     
-    public ElementoFicha(String nome, String descricao) {
+    public Habilidade(String nome, String descricao) {
         this.nome = nome;
         this.descricao = descricao;
     }
@@ -18,4 +19,6 @@ public abstract class ElementoFicha implements IDescritivel {
     public String getDescricao() {
         return descricao;
     }
+    
+    public abstract void aplicarEfeito(Personagem personagem);
 }
