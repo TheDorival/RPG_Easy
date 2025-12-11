@@ -1,4 +1,9 @@
-package main.java.br.com.tormenta20.model;
+package br.com.tormenta20.model;
+
+import java.util.*;
+
+import br.com.tormenta20.enums.*;
+import br.com.tormenta20.model.*;
 
 public class Personagem {
     private String nome;

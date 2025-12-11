@@ -1,7 +1,7 @@
-package main.java.br.com.tormenta20.model;
+package br.com.tormenta20.model;
 
 import java.util.*;
-import main.br.com.tormenta20.enums.*;
+import br.com.tormenta20.enums.*;
 
 public class Atributos implements IModificavel {
     private Map<TipoAtributo, Integer> valores;

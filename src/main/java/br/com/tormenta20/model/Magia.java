@@ -1,4 +1,4 @@
-package main.java.br.com.tormenta20.model;
+package br.com.tormenta20.model;
 
 
 public class Magia extends Habilidade {

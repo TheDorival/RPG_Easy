@@ -1,6 +1,6 @@
-package main.br.com.tormenta20.model;
+package br.com.tormenta20.model;
 
-import main.br.com.tormenta20.interfaces.IDescritivel;
+import br.com.tormenta20.interfaces.IDescritivel;
 
 public abstract class Habilidade implements IDescritivel {
     protected String nome;

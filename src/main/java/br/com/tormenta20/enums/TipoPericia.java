@@ -1,4 +1,4 @@
-package main.java.br.com.tormenta20.enums;
+package br.com.tormenta20.enums;
 
 public enum TipoPericia {
     ACROBACIA(TipoAtributo.DESTREZA),

@@ -1,6 +1,7 @@
-package main.br.com.tormenta20.util;
+package br.com.tormenta20.util;
 
 import java.util.Random;
+import br.com.tormenta20.interfaces.*;
 
 public class RoladorDados implements IRolavel {
     private static final Random random = new Random();

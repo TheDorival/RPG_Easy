@@ -1,5 +1,6 @@
-package main.java.br.com.tormenta20.model;
-
+package br.com.tormenta20.model;
+import br.com.tormenta20.enums.*;
+import java.util.*;
 
 public class Classe extends ElementoFicha {
     private TipoAtributo atributoChave;

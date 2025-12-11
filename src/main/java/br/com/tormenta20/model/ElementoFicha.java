@@ -1,5 +1,6 @@
-package main.br.com.tormenta20.model;
-import main.br.com.tormenta20.interfaces.IDescritivel;
+package br.com.tormenta20.model;
+
+import br.com.tormenta20.interfaces.IDescritivel;
 
 public abstract class ElementoFicha implements IDescritivel {
     protected String nome;

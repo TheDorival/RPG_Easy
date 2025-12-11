@@ -1,4 +1,7 @@
-package main.java.br.com.tormenta20.model;
+package br.com.tormenta20.model;
+
+import java.util.Random;
+import br.com.tormenta20.enums.*;
 
 public class Pericia extends Habilidade implements IRolavel {
     private TipoPericia tipo;

@@ -1,4 +1,8 @@
-package main.java.br.com.tormenta20.model;
+package br.com.tormenta20.model;
+
+import java.util.*;
+import br.com.tormenta20.enums.*;
+
 
 public class Raca extends ElementoFicha {
     private Map<TipoAtributo, Integer> modificadoresAtributo;

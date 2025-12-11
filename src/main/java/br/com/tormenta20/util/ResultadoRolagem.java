@@ -1,4 +1,4 @@
-package main.br.com.tormenta20.util;
+package br.com.tormenta20.util;
 
 public class ResultadoRolagem {
     private int valorDado;
