@@ -3,17 +3,15 @@ package br.com.tormenta20.config;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import io.github.cdimascio.dotenv.Dotenv;
 
 /**
  * Classe para gerenciar conexões com o banco MySQL
  */
 public class DatabaseConnection {
     
-    Dotenv dotenv = Dotenv.load();
     private static final String URL = "jdbc:mysql://localhost:3306/tormenta20";
     private static final String USER = "root";
-    private static final String PASSWORD = "";
+    private static final String PASSWORD = "1234";
     
     // Pool de conexão simples (para produção, use HikariCP ou similar)
     private static Connection connection = null;

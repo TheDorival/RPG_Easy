@@ -1,5 +1,7 @@
 package br.com.tormenta20.dao;
 
+import br.com.tormenta20.factory.ArmaFactory;
+import br.com.tormenta20.factory.ArmaduraFactory;
 import br.com.tormenta20.config.DatabaseConnection;
 import br.com.tormenta20.enums.*;
 import br.com.tormenta20.model.*;
@@ -105,17 +107,16 @@ public class PersonagemDAO {
         List<Personagem> personagens = new ArrayList<>();
         
         try (Connection conn = DatabaseConnection.getConnection();
-             Statement stmt = conn.createStatement();
-             ResultSet rs = stmt.executeQuery(sql)) {
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery(sql)) {
             
             while (rs.next()) {
                 Personagem personagem = mapearPersonagem(rs);
-                carregarPericias(personagem);
-                carregarEquipamento(personagem);
                 personagens.add(personagem);
             }
         }
-        return personagens;
+    
+    return personagens;
     }
     
     /**
@@ -238,7 +239,12 @@ public class PersonagemDAO {
         p.setId(rs.getInt("id"));
         p.setDivindade(rs.getString("divindade"));
         
-        // Atributos
+        Raca raca = new Raca(rs.getString("raca"), "");
+        Classe classe = new Classe(rs.getString("classe"), "", TipoAtributo.FORCA, 10, 3);
+        
+        p.setRaca(raca);
+        p.setClasse(classe);
+        
         Atributos atrib = p.getAtributos();
         atrib.setValor(TipoAtributo.FORCA, rs.getInt("forca"));
         atrib.setValor(TipoAtributo.DESTREZA, rs.getInt("destreza"));
@@ -247,7 +253,7 @@ public class PersonagemDAO {
         atrib.setValor(TipoAtributo.SABEDORIA, rs.getInt("sabedoria"));
         atrib.setValor(TipoAtributo.CARISMA, rs.getInt("carisma"));
         
-        return p;
+    return p;
     }
     
     /**
@@ -337,22 +343,39 @@ public class PersonagemDAO {
      * Carrega equipamento do personagem
      */
     private void carregarEquipamento(Personagem personagem) throws SQLException {
-        String sql = "SELECT tipo, nome FROM personagem_equipamento " +
-                    "WHERE personagem_id = ?";
+    String sql = "SELECT tipo, nome FROM personagem_equipamento WHERE personagem_id = ?";
+    
+    try (Connection conn = DatabaseConnection.getConnection();
+         PreparedStatement stmt = conn.prepareStatement(sql)) {
         
-        try (Connection conn = DatabaseConnection.getConnection();
-             PreparedStatement stmt = conn.prepareStatement(sql)) {
-            
-            stmt.setInt(1, personagem.getId());
-            
-            try (ResultSet rs = stmt.executeQuery()) {
-                while (rs.next()) {
-                    
-                    // Aqui recriar os objetos de equipamento baseado no nome salvo
+        stmt.setInt(1, personagem.getId());
+        
+        try (ResultSet rs = stmt.executeQuery()) {
+            while (rs.next()) {
+                String tipo = rs.getString("tipo");
+                String nome = rs.getString("nome");
+                
+                if (tipo.equals("ARMA")) {
+                    if (nome.contains("Machado")) {
+                        personagem.setArmaEquipada(ArmaFactory.criarMachado());
+                    } else if (nome.contains("Arco")) {
+                        personagem.setArmaEquipada(ArmaFactory.criarArcoCurto());
+                    } else {
+                        personagem.setArmaEquipada(ArmaFactory.criarEspada());
+                    }
+                } else if (tipo.equals("ARMADURA")) {
+                    if (nome.contains("Cota")) {
+                        personagem.setArmaduraEquipada(ArmaduraFactory.criarCotaMalha());
+                    } else if (nome.contains("Batido")) {
+                        personagem.setArmaduraEquipada(ArmaduraFactory.criarCouroBatido());
+                    } else {
+                        personagem.setArmaduraEquipada(ArmaduraFactory.criarCouro());
+                    }
                 }
             }
         }
     }
+}
     
     /**
      * Deleta equipamento do personagem
