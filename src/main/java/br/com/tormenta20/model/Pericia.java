@@ -1,7 +1,8 @@
 package br.com.tormenta20.model;
 
-import java.util.Random;
 import br.com.tormenta20.enums.*;
+import br.com.tormenta20.interfaces.*;
+import java.util.Random;
 
 public class Pericia extends Habilidade implements IRolavel {
     private TipoPericia tipo;
@@ -14,9 +15,8 @@ public class Pericia extends Habilidade implements IRolavel {
     }
     
     public int calcularValor(int nivel, int modAtributo) {
-        // Perícia = metade do nível + modificador
         int valorBase = nivel / 2 + modAtributo;
-        return treinada ? valorBase + 2 : valorBase; // +2 se treinada
+        return treinada ? valorBase + 2 : valorBase;
     }
     
     @Override
@@ -33,15 +33,7 @@ public class Pericia extends Habilidade implements IRolavel {
         // Implementação específica
     }
     
-    public TipoPericia getTipo() {
-        return tipo;
-    }
-    
-    public void setTreinada(boolean treinada) {
-        this.treinada = treinada;
-    }
-    
-    public boolean isTreinada() {
-        return treinada;
-    }
+    public TipoPericia getTipo() { return tipo; }
+    public void setTreinada(boolean treinada) { this.treinada = treinada; }
+    public boolean isTreinada() { return treinada; }
 }

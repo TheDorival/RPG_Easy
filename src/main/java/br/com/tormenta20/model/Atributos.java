@@ -9,7 +9,7 @@ public class Atributos implements IModificavel {
     
     public Atributos() {
         valores = new HashMap<>();
-        // Inicializa com valores padrão 10 (normal para humanos)
+        // Inicializa com valores padrão 10
         for (TipoAtributo tipo : TipoAtributo.values()) {
             valores.put(tipo, 10);
         }
@@ -30,7 +30,6 @@ public class Atributos implements IModificavel {
     
     @Override
     public int getModificador() {
-        // Retorna média dos modificadores
         return valores.values().stream()
             .mapToInt(v -> (v - 10) / 2)
             .sum() / valores.size();
@@ -40,5 +39,11 @@ public class Atributos implements IModificavel {
         modificadores.forEach((tipo, mod) -> 
             valores.put(tipo, valores.get(tipo) + mod)
         );
+    }
+    
+    public int getMaiorModFisico() {
+        int modForca = getModificador(TipoAtributo.FORCA);
+        int modDestreza = getModificador(TipoAtributo.DESTREZA);
+        return Math.max(modForca, modDestreza);
     }
 }

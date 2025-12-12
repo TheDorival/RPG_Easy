@@ -22,11 +22,3 @@ public enum TipoPericia {
         return atributoBase;
     }
 }
-
-public enum TipoArma {
-    ESPADA, MACHADO, ARCO_CURTO
-}
-
-public enum TipoArmadura {
-    COURO, COURO_BATIDO, COTA_MALHA
-}

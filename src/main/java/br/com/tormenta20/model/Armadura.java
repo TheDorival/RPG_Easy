@@ -1,5 +1,7 @@
 package br.com.tormenta20.model;
 
+import br.com.tormenta20.enums.*;
+
 public class Armadura {
     private String nome;
     private TipoArmadura tipo;
