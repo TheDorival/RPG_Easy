@@ -1,5 +1,6 @@
 package br.com.tormenta20.enums;
 
+
 public enum TipoPericia {
     ACROBACIA(TipoAtributo.DESTREZA),
     ATLETISMO(TipoAtributo.FORCA),
@@ -8,7 +9,8 @@ public enum TipoPericia {
     CONHECIMENTO(TipoAtributo.INTELIGENCIA),
     DIPLOMACIA(TipoAtributo.CARISMA),
     INTIMIDACAO(TipoAtributo.CARISMA),
-    CURA(TipoAtributo.SABEDORIA);
+    CURA(TipoAtributo.SABEDORIA),
+    LUTA(null); // LUTA usa o maior mod entre FORÇA e DESTREZA
     
     private final TipoAtributo atributoBase;
     
@@ -19,4 +21,12 @@ public enum TipoPericia {
     public TipoAtributo getAtributoBase() {
         return atributoBase;
     }
+}
+
+public enum TipoArma {
+    ESPADA, MACHADO, ARCO_CURTO
+}
+
+public enum TipoArmadura {
+    COURO, COURO_BATIDO, COTA_MALHA
 }
