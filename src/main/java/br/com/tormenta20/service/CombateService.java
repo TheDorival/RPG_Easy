@@ -3,7 +3,6 @@ package br.com.tormenta20.service;
 import br.com.tormenta20.model.*;
 import br.com.tormenta20.enums.*;
 import br.com.tormenta20.util.RoladorDados;
-import br.com.tormenta20.util.ResultadoRolagem;
 
 /**
  * Serviço para gerenciar combates entre personagens

@@ -4,8 +4,6 @@ package br.com.tormenta20.model;
 public class Magia extends Habilidade {
     private int nivel;
     private String escola;
-    private String tempoConjuracao;
-    private String alcance;
     
     public Magia(String nome, String descricao, int nivel, String escola) {
         super(nome, descricao);
@@ -27,10 +25,8 @@ public class Magia extends Habilidade {
     }
     
     public void setTempoConjuracao(String tempoConjuracao) {
-        this.tempoConjuracao = tempoConjuracao;
     }
     
     public void setAlcance(String alcance) {
-        this.alcance = alcance;
     }
 }

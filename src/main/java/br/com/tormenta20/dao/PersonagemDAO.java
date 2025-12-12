@@ -247,13 +247,6 @@ public class PersonagemDAO {
         atrib.setValor(TipoAtributo.SABEDORIA, rs.getInt("sabedoria"));
         atrib.setValor(TipoAtributo.CARISMA, rs.getInt("carisma"));
         
-        // Nota: Raça, Classe e Origem precisariam ser carregadas
-        // de suas respectivas tabelas ou factories
-        // Por simplicidade, vamos criar objetos básicos
-        String nomeRaca = rs.getString("raca");
-        String nomeClasse = rs.getString("classe");
-        
-        
         return p;
     }
     
@@ -354,8 +347,6 @@ public class PersonagemDAO {
             
             try (ResultSet rs = stmt.executeQuery()) {
                 while (rs.next()) {
-                    String tipo = rs.getString("tipo");
-                    String nome = rs.getString("nome");
                     
                     // Aqui recriar os objetos de equipamento baseado no nome salvo
                 }

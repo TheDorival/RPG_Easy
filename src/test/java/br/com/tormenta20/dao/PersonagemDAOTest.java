@@ -1,9 +1,8 @@
-package br.com.tormenta20.test;
+package br.com.tormenta20.dao;
 
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
 import br.com.tormenta20.model.*;
-import br.com.tormenta20.dao.PersonagemDAOSimulator;
 import java.util.List;
 
 public class PersonagemDAOTest {

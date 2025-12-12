@@ -110,7 +110,7 @@ public class ExemploUsoTormenta20 {
     }
     
     private static Classe criarClasseGuerreiro() {
-        // ✅ CORRIGIDO: Construtor com 5 parâmetros
+        
         Classe guerreiro = new Classe(
             "Guerreiro", 
             "Mestre das armas e combate", 
@@ -217,8 +217,7 @@ public class ExemploUsoTormenta20 {
     }
     
     private static void testarRolagens(Personagem personagem) {
-        RoladorDados rolador = new RoladorDados();
-        
+
         // Teste 1: D20 simples
         System.out.println("\n1. Rolagem de D20:");
         for (int i = 0; i < 3; i++) {
@@ -259,7 +258,6 @@ public class ExemploUsoTormenta20 {
         Raca humano = new Raca("Humano", "Raça versátil");
         humano.adicionarModificador(TipoAtributo.INTELIGENCIA, 2);
         
-        // ✅ CORRIGIDO: Construtor com 5 parâmetros
         Classe mago = new Classe(
             "Mago", 
             "Conjurador arcano", 
@@ -287,7 +285,6 @@ public class ExemploUsoTormenta20 {
         System.out.println("✓ " + gandalf.getNome() + " criado!");
         
         // Criar Clérigo
-        // ✅ CORRIGIDO: Construtor com 5 parâmetros
         Classe clerigo = new Classe(
             "Clérigo", 
             "Devoto divino", 
