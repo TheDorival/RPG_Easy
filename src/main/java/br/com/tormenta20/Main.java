@@ -142,6 +142,9 @@ public class Main {
             personagem.setArmaduraEquipada(ArmaduraFactory.criarCotaMalha());
         } else if (classe.getNome().equals("Arcanista")) {
             personagem.setArmaduraEquipada(ArmaduraFactory.criarCouro());
+        } else if (classe.getNome().equals("Bucaneiro")) {
+            personagem.setArmaEquipada(ArmaFactory.criarEspada());  // ← ADICIONE ESTA LINHA
+            personagem.setArmaduraEquipada(ArmaduraFactory.criarCouro());
         }
         
         // Salvar
@@ -284,27 +287,40 @@ public class Main {
             p.getPontosVida(), p.getPontosMana(), p.getDefesa());
     }
     
-    private static void testarCombate() {
-        System.out.println("\n=== TESTE DE COMBATE ===\n");
-        
-        List<Personagem> personagens = dao.listarTodos();
-        if (personagens.size() < 2) {
-            System.out.println("✗ É necessário ter pelo menos 2 personagens!");
-            return;
-        }
-        
-        System.out.println("Personagens disponíveis:");
-        for (int i = 0; i < personagens.size(); i++) {
-            System.out.printf("%d. %s (Nv %d)\n", i + 1, 
-                personagens.get(i).getNome(), 
-                personagens.get(i).getNivel());
-        }
-        
+   private static void testarCombate() {
+    System.out.println("\n=== TESTE DE COMBATE ===\n");
+    
+    List<Personagem> personagens = dao.listarTodos();
+    if (personagens.size() < 2) {
+        System.out.println("✗ É necessário ter pelo menos 2 personagens!");
+        return;
+    }
+    
+    System.out.println("Personagens disponíveis:");
+    for (int i = 0; i < personagens.size(); i++) {
+        System.out.printf("%d. %s (Nv %d)\n", i + 1, 
+            personagens.get(i).getNome(), 
+            personagens.get(i).getNivel());
+    }
+    
+    try {
         System.out.print("\nEscolha o atacante (número): ");
         int idxAtacante = Integer.parseInt(scanner.nextLine()) - 1;
         
+        // ✅ VALIDAÇÃO ADICIONADA
+        if (idxAtacante < 0 || idxAtacante >= personagens.size()) {
+            System.out.println("\n✗ Número inválido! Escolha entre 1 e " + personagens.size());
+            return;
+        }
+        
         System.out.print("Escolha o defensor (número): ");
         int idxDefensor = Integer.parseInt(scanner.nextLine()) - 1;
+        
+        // ✅ VALIDAÇÃO ADICIONADA
+        if (idxDefensor < 0 || idxDefensor >= personagens.size()) {
+            System.out.println("\n✗ Número inválido! Escolha entre 1 e " + personagens.size());
+            return;
+        }
         
         Personagem atacante = personagens.get(idxAtacante);
         Personagem defensor = personagens.get(idxDefensor);
@@ -321,7 +337,10 @@ public class Main {
             System.out.println(resultado);
             System.out.println();
         }
+    } catch (NumberFormatException e) {
+        System.out.println("\n✗ Entrada inválida! Digite apenas números.");
     }
+}
     
     private static void rolarDados() {
         System.out.println("\n=== ROLADOR DE DADOS ===\n");

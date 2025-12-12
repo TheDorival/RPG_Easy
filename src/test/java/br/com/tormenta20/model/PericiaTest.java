@@ -3,6 +3,7 @@ package br.com.tormenta20.model;
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
 import br.com.tormenta20.enums.TipoPericia;
+import br.com.tormenta20.enums.TipoAtributo;
 
 public class PericiaTest {
     

@@ -1,0 +1,6 @@
+br\com\tormenta20\model\AtributosTest.class
+br\com\tormenta20\util\RoladorDadosTest.class
+br\com\tormenta20\service\PersonagemServiceTest.class
+br\com\tormenta20\test\PersonagemDAOTest.class
+br\com\tormenta20\model\PersonagemTest.class
+br\com\tormenta20\model\PericiaTest.class

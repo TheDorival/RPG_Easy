@@ -14,7 +14,7 @@ public class ExemploUsoTormenta20 {
         
         // Inicializa serviços
         PersonagemService service = new PersonagemService();
-        PersonagemDAO dao = new PersonagemDAO();
+        PersonagemDAOSimulator dao = new PersonagemDAOSimulator();
         
         // 1. CRIAR RAÇA
         System.out.println("1. Criando Raça: Elfo");
@@ -71,12 +71,12 @@ public class ExemploUsoTormenta20 {
         System.out.println("\n=== ROLAGENS DE TESTE ===");
         testarRolagens(thorin);
         
-        // 9. SALVAR NO BANCO
+        // 9. SALVAR EM MEMÓRIA
         System.out.println("\n=== PERSISTÊNCIA ===");
         int id = dao.salvar(thorin);
         System.out.println("Personagem salvo com ID: " + id);
         
-        // 10. BUSCAR DO BANCO
+        // 10. BUSCAR DA MEMÓRIA
         Personagem recuperado = dao.buscarPorId(id);
         System.out.println("Personagem recuperado: " + recuperado.getNome());
         
@@ -110,11 +110,15 @@ public class ExemploUsoTormenta20 {
     }
     
     private static Classe criarClasseGuerreiro() {
-        Classe guerreiro = new Classe("Guerreiro", 
+        // ✅ CORRIGIDO: Construtor com 5 parâmetros
+        Classe guerreiro = new Classe(
+            "Guerreiro", 
             "Mestre das armas e combate", 
-            TipoAtributo.FORCA);
+            TipoAtributo.FORCA,
+            20,  // PV base por nível
+            3    // PM base por nível
+        );
         
-        guerreiro.setPontosVida(20);
         guerreiro.adicionarPericiaDisponivel(TipoPericia.ATLETISMO);
         guerreiro.adicionarPericiaDisponivel(TipoPericia.INTIMIDACAO);
         guerreiro.adicionarPericiaDisponivel(TipoPericia.PERCEPCAO);
@@ -250,13 +254,19 @@ public class ExemploUsoTormenta20 {
         }
     }
     
-    private static void criarParty(PersonagemService service, PersonagemDAO dao) {
+    private static void criarParty(PersonagemService service, PersonagemDAOSimulator dao) {
         // Criar Mago
         Raca humano = new Raca("Humano", "Raça versátil");
         humano.adicionarModificador(TipoAtributo.INTELIGENCIA, 2);
         
-        Classe mago = new Classe("Mago", "Conjurador arcano", 
-                                TipoAtributo.INTELIGENCIA);
+        // ✅ CORRIGIDO: Construtor com 5 parâmetros
+        Classe mago = new Classe(
+            "Mago", 
+            "Conjurador arcano", 
+            TipoAtributo.INTELIGENCIA,
+            6,  // PV base
+            6   // PM base
+        );
         mago.adicionarPericiaDisponivel(TipoPericia.CONHECIMENTO);
         
         Origem erudito = new Origem("Erudito", "Estudioso dedicado");
@@ -277,8 +287,14 @@ public class ExemploUsoTormenta20 {
         System.out.println("✓ " + gandalf.getNome() + " criado!");
         
         // Criar Clérigo
-        Classe clerigo = new Classe("Clérigo", "Devoto divino", 
-                                    TipoAtributo.SABEDORIA);
+        // ✅ CORRIGIDO: Construtor com 5 parâmetros
+        Classe clerigo = new Classe(
+            "Clérigo", 
+            "Devoto divino", 
+            TipoAtributo.SABEDORIA,
+            8,  // PV base
+            5   // PM base
+        );
         Origem devoto = new Origem("Devoto", "Servo dos deuses");
         
         Personagem frodo = service.criarPersonagem(
