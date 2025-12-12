@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="br.com.tormenta20.service.PersonagemServiceTest" time="0.03" tests="5" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="br.com.tormenta20.service.PersonagemServiceTest" time="0.032" tests="5" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="23"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -15,7 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="BR"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-23\bin"/>
-    <property name="sun.java.command" value="C:\Users\Leonardo\AppData\Local\Temp\surefire3774334274857602914\surefirebooter-20251212185546203_3.jar C:\Users\Leonardo\AppData\Local\Temp\surefire3774334274857602914 2025-12-12T18-55-45_455-jvmRun1 surefire-20251212185546203_1tmp surefire_0-20251212185546203_2tmp"/>
+    <property name="sun.java.command" value="C:\Users\Leonardo\AppData\Local\Temp\surefire12188816861019074657\surefirebooter-20251212190305550_3.jar C:\Users\Leonardo\AppData\Local\Temp\surefire12188816861019074657 2025-12-12T19-03-04_747-jvmRun1 surefire-20251212190305550_1tmp surefire_0-20251212190305550_2tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="C:\Users\Leonardo\Documents\GitHub\RPG_Easy\target\test-classes;C:\Users\Leonardo\Documents\GitHub\RPG_Easy\target\classes;C:\Users\Leonardo\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.9.2\junit-jupiter-api-5.9.2.jar;C:\Users\Leonardo\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\Leonardo\.m2\repository\org\junit\platform\junit-platform-commons\1.9.2\junit-platform-commons-1.9.2.jar;C:\Users\Leonardo\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\Leonardo\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.9.2\junit-jupiter-engine-5.9.2.jar;C:\Users\Leonardo\.m2\repository\org\junit\platform\junit-platform-engine\1.9.2\junit-platform-engine-1.9.2.jar;C:\Users\Leonardo\.m2\repository\org\mockito\mockito-core\5.2.0\mockito-core-5.2.0.jar;C:\Users\Leonardo\.m2\repository\net\bytebuddy\byte-buddy\1.14.1\byte-buddy-1.14.1.jar;C:\Users\Leonardo\.m2\repository\net\bytebuddy\byte-buddy-agent\1.14.1\byte-buddy-agent-1.14.1.jar;C:\Users\Leonardo\.m2\repository\org\objenesis\objenesis\3.3\objenesis-3.3.jar;C:\Users\Leonardo\.m2\repository\com\mysql\mysql-connector-j\8.2.0\mysql-connector-j-8.2.0.jar;C:\Users\Leonardo\.m2\repository\com\google\protobuf\protobuf-java\3.21.9\protobuf-java-3.21.9.jar;C:\Users\Leonardo\.m2\repository\com\zaxxer\HikariCP\5.1.0\HikariCP-5.1.0.jar;C:\Users\Leonardo\.m2\repository\org\slf4j\slf4j-api\1.7.36\slf4j-api-1.7.36.jar;C:\Users\Leonardo\.m2\repository\org\slf4j\slf4j-simple\2.0.9\slf4j-simple-2.0.9.jar;C:\Users\Leonardo\.m2\repository\io\github\cdimascio\java-dotenv\5.2.2\java-dotenv-5.2.2.jar;C:\Users\Leonardo\.m2\repository\org\jetbrains\kotlin\kotlin-stdlib\1.4.0\kotlin-stdlib-1.4.0.jar;C:\Users\Leonardo\.m2\repository\org\jetbrains\kotlin\kotlin-stdlib-common\1.4.0\kotlin-stdlib-common-1.4.0.jar;C:\Users\Leonardo\.m2\repository\org\jetbrains\annotations\13.0\annotations-13.0.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -30,7 +30,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\Leonardo\AppData\Local\Temp\surefire3774334274857602914\surefirebooter-20251212185546203_3.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\Leonardo\AppData\Local\Temp\surefire12188816861019074657\surefirebooter-20251212190305550_3.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="23+37-2369"/>
@@ -58,9 +58,9 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="67.0"/>
   </properties>
-  <testcase name="testCriarPersonagemNivelInvalido" classname="br.com.tormenta20.service.PersonagemServiceTest" time="0.018"/>
+  <testcase name="testCriarPersonagemNivelInvalido" classname="br.com.tormenta20.service.PersonagemServiceTest" time="0.015"/>
   <testcase name="testValidarPersonagem" classname="br.com.tormenta20.service.PersonagemServiceTest" time="0"/>
-  <testcase name="testTreinarPericia" classname="br.com.tormenta20.service.PersonagemServiceTest" time="0"/>
+  <testcase name="testTreinarPericia" classname="br.com.tormenta20.service.PersonagemServiceTest" time="0.011"/>
   <testcase name="testCriarPersonagemValido" classname="br.com.tormenta20.service.PersonagemServiceTest" time="0"/>
   <testcase name="testCriarPersonagemNomeVazio" classname="br.com.tormenta20.service.PersonagemServiceTest" time="0"/>
 </testsuite>

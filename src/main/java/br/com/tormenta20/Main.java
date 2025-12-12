@@ -307,7 +307,6 @@ public class Main {
         System.out.print("\nEscolha o atacante (número): ");
         int idxAtacante = Integer.parseInt(scanner.nextLine()) - 1;
         
-        // ✅ VALIDAÇÃO ADICIONADA
         if (idxAtacante < 0 || idxAtacante >= personagens.size()) {
             System.out.println("\n✗ Número inválido! Escolha entre 1 e " + personagens.size());
             return;
@@ -316,7 +315,6 @@ public class Main {
         System.out.print("Escolha o defensor (número): ");
         int idxDefensor = Integer.parseInt(scanner.nextLine()) - 1;
         
-        // ✅ VALIDAÇÃO ADICIONADA
         if (idxDefensor < 0 || idxDefensor >= personagens.size()) {
             System.out.println("\n✗ Número inválido! Escolha entre 1 e " + personagens.size());
             return;

@@ -30,12 +30,9 @@ public class RoladorDadosTest {
     
     @Test
     public void testCritico() {
-        // Testa múltiplas rolagens para verificar se crítico funciona
-        boolean encontrouCritico = false;
         for (int i = 0; i < 100; i++) {
             ResultadoRolagem resultado = RoladorDados.rolarComModificador(0);
             if (resultado.isCritico()) {
-                encontrouCritico = true;
                 assertEquals(20, resultado.getValorDado());
                 break;
             }

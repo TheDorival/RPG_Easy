@@ -2,7 +2,6 @@ package br.com.tormenta20.builder;
 
 import br.com.tormenta20.model.*;
 import br.com.tormenta20.enums.*;
-import br.com.tormenta20.factory.*;
 
 /**
  * Builder para criar personagens de forma fluente e conveniente
