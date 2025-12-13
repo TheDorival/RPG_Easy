@@ -5,7 +5,6 @@ import static org.junit.jupiter.api.Assertions.*;
 import br.com.tormenta20.model.*;
 import br.com.tormenta20.enums.*;
 import br.com.tormenta20.factory.*;
-import java.util.Map;
 
 public class PersonagemServiceTest {
     

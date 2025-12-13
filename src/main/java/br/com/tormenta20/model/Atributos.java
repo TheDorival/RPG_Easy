@@ -7,6 +7,7 @@ import java.util.*;
 public class Atributos implements IModificavel {
     private Map<TipoAtributo, Integer> valores;
     
+    // ERRO PROPOSITAL
     public Atributos() {
         valores = new HashMap<>();
         // Inicializa com valores padrão 10

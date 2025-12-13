@@ -3,6 +3,8 @@ package br.com.tormenta20.dao;
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
 import br.com.tormenta20.model.*;
+
+import java.sql.SQLException;
 import java.util.List;
 
 public class PersonagemDAOTest {
@@ -22,14 +24,18 @@ public class PersonagemDAOTest {
     }
     
     @Test
-    public void testSalvarPersonagem() {
-        int id = dao.salvar(personagemTeste);
-        assertTrue(id > 0);
-        
-        Personagem recuperado = dao.buscarPorId(id);
-        assertNotNull(recuperado);
-        assertEquals("Teste", recuperado.getNome());
-    }
+    public void testSalvarPersonagem() throws Exception {
+        try{
+            int id = dao.salvar(personagemTeste);
+            assertTrue(id > 0);
+
+            Personagem recuperado = dao.buscarPorId(id);
+            assertNotNull(recuperado);
+            assertEquals("Teste", recuperado.getNome());
+        } catch (Exception e){
+            throw new SQLException("mensagem");
+        }
+        }
     
     @Test
     public void testSalvarPersonagemNulo() {

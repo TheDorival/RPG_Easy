@@ -1,4 +1,4 @@
 @echo off
-echo === EXECUTANDO EXEMPLO TORMENTA 20 ===
+echo === EXECUTANDO TORMENTA 20 ===
 mvn exec:java -Dexec.mainClass=br.com.tormenta20.Main
 pause

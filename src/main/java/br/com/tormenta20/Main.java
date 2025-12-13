@@ -49,6 +49,9 @@ public class Main {
                 case 7:
                     carregarExemplos();
                     break;
+                case 8:
+                    deletarPersonagem();
+                    break;
                 case 0:
                     continuar = false;
                     System.out.println("\n✓ Encerrando sistema...");
@@ -77,6 +80,7 @@ public class Main {
         System.out.println("║ 5. Testar Combate                          ║");
         System.out.println("║ 6. Rolar Dados                             ║");
         System.out.println("║ 7. Carregar Personagens de Exemplo         ║");
+        System.out.println("║ 8. Deletar Personagem                      ║");
         System.out.println("║ 0. Sair                                    ║");
         System.out.println("╚════════════════════════════════════════════╝");
         System.out.print("Escolha uma opção: ");
@@ -328,6 +332,11 @@ public class Main {
             Personagem atacante = personagens.get(idxAtacante);
             Personagem defensor = personagens.get(idxDefensor);
             
+            if (atacante.getArmaEquipada() == null) {
+                System.out.println("\n✗ Atacante não possui arma equipada!");
+                return;
+            }
+            
             CombateService combate = new CombateService();
             
             System.out.println("\n--- COMBATE ---");
@@ -379,6 +388,23 @@ public class Main {
             total += resultado;
         }
         System.out.println("\nTotal: " + total);
+    }
+    
+    private static void deletarPersonagem() {
+        System.out.println("\n=== DELETAR PERSONAGEM ===\n");
+        System.out.print("Digite o ID do personagem: ");
+        int id = Integer.parseInt(scanner.nextLine());
+        
+        try {
+            boolean deletado = dao.deletar(id);
+            if (deletado) {
+                System.out.println("\n✓ Personagem deletado com sucesso!");
+            } else {
+                System.out.println("\n✗ Personagem não encontrado!");
+            }
+        } catch (SQLException e) {
+            System.out.println("\n✗ Erro ao deletar: " + e.getMessage());
+        }
     }
     
     private static void carregarExemplos() {
